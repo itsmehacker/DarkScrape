@@ -14,7 +14,6 @@
   <img src="https://imgur.com/2f0TaAD.png">
 </p>
 
-
 ## Tested On
 
 * Kali Linux 2019.2
@@ -32,3 +31,5 @@ pip3 install socket
 pip3 install requests
 pip3 install bs4
 ```
+## Inspired By:
+Jake Creps @jakecreps
