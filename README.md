@@ -25,7 +25,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/itsmehacker/CardPwn.git
+git clone https://github.com/itsmehacker/DarkScrape.git
 pip3 install socks
 pip3 install socket
 pip3 install requests
