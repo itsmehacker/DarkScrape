@@ -26,10 +26,7 @@
 
 ```bash
 git clone https://github.com/itsmehacker/DarkScrape.git
-pip3 install socks
-pip3 install socket
-pip3 install requests
-pip3 install bs4
+pip3 install socks socket requests bs4
 ```
 ## Inspired By:
 Jake Creps @jakecreps
