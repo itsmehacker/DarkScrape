@@ -26,7 +26,9 @@
 
 ```bash
 git clone https://github.com/itsmehacker/DarkScrape.git
-pip3 install socks socket requests bs4
+pip3 install socket requests bs4
+service tor start
 ```
+
 ## Inspired By:
 Jake Creps @jakecreps
