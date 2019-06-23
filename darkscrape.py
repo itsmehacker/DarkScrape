@@ -40,7 +40,7 @@ def scrap():
 		torfile = torfile.readlines()
 		for res in torfile:
 			response = session.get(res).text
-			soup = BeautifulSoup(response, 'lxml')
+			soup = BeautifulSoup(response, 'lxml' ,HTTPAdapter(max_retries=5))
 			tags = soup.find_all('img')
 			for tag in tags:
 				print(C + "[>] " + W + tag.get('src'))
