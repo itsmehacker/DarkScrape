@@ -31,24 +31,6 @@ session.proxies = {}
 session.proxies['http'] = 'socks5h://localhost:9050'
 session.proxies['https'] = 'socks5h://localhost:9050'
 
-def updater():
-	print (G + '[+]' + R + ' Checking for updates...' + W + '\n')
-	updated_version = requests.get('https://raw.githubusercontent.com/itsmehacker/DarkScrape/master/version.txt', timeout = 5)
-	updated_version = updated_version.text.split(' ')[1]
-	updated_version = updated_version.strip()
-	if updated_version != version:
-		print (G + '[!]' + R + ' A New Version is Available : ' + W + updated_version)
-		ans = input(G + '[!]' + R + ' Update ? [y/n] : ' + W)
-		if ans == 'y':
-			print ('\n' + G + '[+]' + R + ' Updating...' + '\n' + W)
-			subp.check_output(['git', 'reset', '--hard', 'origin/master'])
-			subp.check_output(['git', 'pull'])
-			print (G + '[+]' + R + ' Script Updated...Please Execute Again...' + W)
-			exit()
-	else:
-		print (G + '[+]' + R + ' Script is up-to-date...' + '\n' + W)
-	
-
 def service():
 	print('\n' + C + "[>] Checking for tor service..." + W + '\n')
 	cmd = 'systemctl is-active tor.service'
@@ -85,7 +67,6 @@ def main():
 
 try:
 	banner()
-	updater()
 	service()
 	scrap()
 	main()
