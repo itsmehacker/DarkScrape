@@ -26,9 +26,9 @@
 
 ```bash
 git clone https://github.com/itsmehacker/DarkScrape.git
-pip3 install socket requests bs4
-service tor start
 ```
+### To Do 
+Download Media 
 
 ## Inspired By:
 Jake Creps @jakecreps
