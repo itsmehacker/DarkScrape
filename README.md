@@ -26,6 +26,7 @@
 
 ```bash
 git clone https://github.com/itsmehacker/DarkScrape.git
+pip3 install -r requirements.txt
 ```
 ### To Do 
 Download Media 
