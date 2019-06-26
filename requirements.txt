@@ -1,0 +1,4 @@
+pip3 install xlrd
+pip3 install requests
+pip3 install csv 
+pip3 install bs4
