@@ -18,8 +18,6 @@ def file():
 	file = input(C + '[+] ' + G + 'Please Enter File Name or Location -> ')
 	if 'txt' in str(file):
 		Text()
-	elif 'csv' in str(file):
-		CSV()
 	elif 'xlsx' in str(file):
 		Excel()
 	else:
