@@ -25,9 +25,6 @@ def file():
 	else:
 		print(R +"[!] File Type Is Not Supported." + W )
 
-def CSV():
-	print()
-
 def Text():
 	with open(file, 'r') as torfile:
 		torfile = torfile.readlines()
@@ -38,10 +35,6 @@ def Text():
 			for tag in tags:
 				url = tag.get('src')
 			print(C + "[>] " + W + url + '\n')
-			d = input(C + '[>] do you Want to Download media (y/n) -> ' + W)
-			if d == 'y':
-				subp.Popen('mkdir', '{}'.format(url, shell=True))
-
 
 def Excel():
 	workbook = xlrd.open_workbook('{}'.format(file))
