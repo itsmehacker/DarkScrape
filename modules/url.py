@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import subprocess as subp
+import os
 
 session = requests.session()
 session.proxies = {}
@@ -13,16 +14,32 @@ C = '\033[36m' # cyan
 W = '\033[0m' # white
 
 def url():
+	url_media = []
 	try:
 		try:
-			torurl = input(C + '[+] '+ G + 'Please Enter URL -> ')
+			torurl = input(C + '[+] '+ G + 'Please Enter URL -> ' +W)
 			response = session.get('http://' +torurl).text
 			soup = BeautifulSoup(response, 'lxml')
 			tags = soup.find_all('img')
 			for tag in tags:
 				urls = tag.get('src')
-				me = urls.split('/')
+				media = 'http://'+torurl+'/'+str(urls)				
+				url_media.append(media)
 				print(C + "[>] " + W + str(urls))
+			down = input(C + '[+] '+ G + 'Download Media (y/n) -> ')
+			torurl1 = torurl.replace('.','-')
+			if down =='y':
+				os.system('mkdir Media/{}'.format(torurl1))
+				for item in url_media:
+					m = item.split('/')[-1]
+					if '.png' or '.jpg' or '.gif' in m:
+						r =session.get(item)
+						with open('Media/{}/{}'.format(torurl1,m), 'wb') as f:
+							f.write(r.content)
+				print('\n' + C + '[>] All Media Downloaded -> ' + G + 'Media/'+torurl1 + W)
+			else:
+				print('\n' + R + '[!] Exiting...')
+				exit()
 		except requests.exceptions.ConnectionError as e:
 			print( '\n' + R +'[!] Connection Error in {}'.format(torurl) + W)
 			pass
