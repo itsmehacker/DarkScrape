@@ -2,3 +2,4 @@ xlrd
 requests
 csv 
 bs4
+os
