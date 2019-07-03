@@ -10,7 +10,7 @@ C = '\033[36m' # cyan
 W = '\033[0m' # white
 
 
-version = '1.3'
+version = '1.4'
 
 def banner():
 	banner = r'''
@@ -30,6 +30,8 @@ session = requests.session()
 session.proxies = {}
 session.proxies['http'] = 'socks5h://localhost:9050'
 session.proxies['https'] = 'socks5h://localhost:9050'
+
+
 
 def service():
 	print('\n' + C + "[>] Checking for tor service..." + W + '\n')
