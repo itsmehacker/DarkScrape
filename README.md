@@ -28,8 +28,9 @@
 git clone https://github.com/itsmehacker/DarkScrape.git
 pip3 install -r requirements.txt
 ```
-### To Do 
-Download Media 
+## Features
+* Download Media
+* Scraping From Txt Csv Excel Files
 
 ## Inspired By:
 Jake Creps @jakecreps
