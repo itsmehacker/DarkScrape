@@ -30,7 +30,10 @@ pip3 install -r requirements.txt
 ```
 ## Features
 * Download Media
-* Scraping From Txt Csv Excel Files
+* Scraping From Files
+  * Txt 
+  * Csv 
+  * Excel
 
 ## Inspired By:
 Jake Creps @jakecreps
