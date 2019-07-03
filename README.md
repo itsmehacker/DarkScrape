@@ -30,6 +30,7 @@ pip3 install -r requirements.txt
 ```
 ## Features
 * Download Media
+* Scrape From Single Url
 * Scraping From Files
   * Txt 
   * Csv 
