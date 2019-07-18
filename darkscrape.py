@@ -10,7 +10,7 @@ C = '\033[36m' # cyan
 W = '\033[0m' # white
 
 
-version = '1.4'
+version = '1.5'
 
 def banner():
 	banner = r'''
