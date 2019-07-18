@@ -4,6 +4,8 @@ import csv
 import requests
 from bs4 import BeautifulSoup
 import os
+import subprocess as subp
+import face_recognition
 
 
 R = '\033[31m' # red
@@ -20,7 +22,7 @@ url_media = []
 foln = []
 results = []
 record = []
-
+fol = ''
 
 def file():
 	global file
@@ -164,6 +166,7 @@ def Excel():
 
 
 def Download():
+	global fol
 	fol = input('\n' + R + '[>] ' + G + 'Enter Folder Name -> ' +W)
 	os.system('mkdir Media/{}'.format(fol))
 	for item in url_media:
@@ -173,3 +176,23 @@ def Download():
 			with open('Media/{}/{}'.format(fol,m), 'wb') as f:
 				f.write(r.content)
 	print('\n' + C + '[>] ' + R + 'All Files Downloaded in Media/{}'.format(fol) +W)
+	face = input(C + '[+] '+ G + 'Do You What To Search Image (y/n) -> ')
+	if face == 'y':
+		face_re()
+	else:
+		print(R  + '[!] Exiting...' + W)
+		exit()
+
+
+def face_re():
+	known_folder = input(C + '[+] '+ G + 'Enter the Known Images Folder Name or Location -> ')
+	unknown_folder =input(C + '[+] '+ G + 'Enter the Check Images Folder Name or Location -> ')
+	search = subp.Popen(['face_recognition', '{}'.format(known_folder), '{}'.format(unknown_folder)], stdout=subp.PIPE, stderr=subp.PIPE)
+	output = search.communicate()[0].decode('utf-8')
+	output = output.splitlines()
+	for name in output:
+		if 'person' in name:
+			pass
+		else:
+			name = name.split(',')[1]
+			print('\n' + C + '[>]' + G + 'Image Founded -> '+ R +'{}'.format(name)+W)
