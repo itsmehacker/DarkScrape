@@ -31,6 +31,7 @@ pip3 install -r requirements.txt
 ## Features
 * Download Media
 * Scrape From Single Url
+* Face Recognition
 * Scraping From Files
   * Txt 
   * Csv 
