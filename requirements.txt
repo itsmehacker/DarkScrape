@@ -1,3 +1,4 @@
 xlrd
 requests
 bs4
+face_recognition
