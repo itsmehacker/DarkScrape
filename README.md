@@ -9,7 +9,12 @@
   <img src="https://img.shields.io/badge/-Tor-green.svg">
   <h4 align="center">OSINT Tool to find Media Links in Tor Sites</h4>
 </p>
-
+<p align="center">
+  <br>
+  <b>Available in</b>
+  <br>
+  <img src="https://i.imgur.com/IPiAUZi.png">
+</p>
 <p align="center">
   <img src="https://i.imgur.com/MMb0FUg.png?1">
 </p>
