@@ -21,7 +21,10 @@ def parse_url():
     try:
         try:
             torurl = input(C + '[+] '+ G + 'Please Enter URL -> ' +W)
-            response = SESSION.get('http://' +torurl).text
+            if 'http://' in torurl:
+                response = session.get(torurl).text
+            else:
+                response = session.get('http://' +torurl).text
             soup = BeautifulSoup(response, 'lxml')
             tags = soup.find_all('img')
             for tag in tags:
