@@ -3,10 +3,10 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
-SESSION = requests.session()
-SESSION.proxies = {}
-SESSION.proxies['http'] = 'socks5h://localhost:9050'
-SESSION.proxies['https'] = 'socks5h://localhost:9050'
+session = requests.session()
+session.proxies = {}
+session.proxies['http'] = 'socks5h://localhost:9050'
+session.proxies['https'] = 'socks5h://localhost:9050'
 
 R = '\033[31m' # red
 G = '\033[32m' # green
@@ -39,7 +39,7 @@ def parse_url():
                 for item in url_media:
                     m = item.split('/')[-1]
                     if '.png' or '.jpg' or '.gif' in m:
-                        r = SESSION.get(item)
+                        r = session.get(item)
                         with open('Media/{}/{}'.format(torurl1,m), 'wb') as f:
                             f.write(r.content)
                 print('\n' + C + '[>] All Media Downloaded -> ' + G + 'Media/'+torurl1 + W)
