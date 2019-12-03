@@ -26,10 +26,10 @@ def banner():
     print(R + "Created By :- " + G + "Hacker Destination" +W)
     print(R + "Version :- " + G + VERSION + W + '\n')
 
-SESSION = requests.session()
-SESSION.proxies = {}
-SESSION.proxies['http'] = 'socks5h://localhost:9050'
-SESSION.proxies['https'] = 'socks5h://localhost:9050'
+session = requests.session()
+session.proxies = {}
+session.proxies['http'] = 'socks5h://localhost:9050'
+session.proxies['https'] = 'socks5h://localhost:9050'
 
 
 
@@ -50,7 +50,7 @@ def service():
 
 
 def scrap():
-    r = SESSION.get("http://icanhazip.com").text
+    r = session.get("http://icanhazip.com").text
     print(R + '[+]' + G  + ' Connected to Tor...')
     print(R + '[+]' + G  + ' Your Tor IP -> {}'.format(r))
 
