@@ -13,10 +13,10 @@ G = '\033[32m' # green
 C = '\033[36m' # cyan
 W = '\033[0m' # white
 
-SESSION = requests.session()
-SESSION.proxies = {}
-SESSION.proxies['http'] = 'socks5h://localhost:9050'
-SESSION.proxies['https'] = 'socks5h://localhost:9050'
+session = requests.session()
+session.proxies = {}
+session.proxies['http'] = 'socks5h://localhost:9050'
+session.proxies['https'] = 'socks5h://localhost:9050'
 
 url_media = []
 fol = ''
@@ -48,9 +48,9 @@ def parse_text_file():
                 for res in url2:
                     print('\n' + C + '[>] ' + G + 'Scraping Url -> ' + R + '{}'.format(res) + W)
                     if 'http://' in url2:
-                        response = SESSION.get(res, HTTPAdapter(max_retries=5)).text
+                        response = session.get(res, HTTPAdapter(max_retries=5)).text
                     else:
-                        response = SESSION.get('http://'+res).text
+                        response = session.get('http://'+res).text
                     soup = BeautifulSoup(response, 'lxml')
                     tags = soup.find_all('img')
                     if len(tags) < 1:
@@ -93,9 +93,9 @@ def parse_csv_file():
             try:
                 try:
                     if 'http://' in res:
-                        response = SESSION.get(res).text
+                        response = session.get(res).text
                     else:
-                        response = SESSION.get('http://'+res).text
+                        response = session.get('http://'+res).text
                     soup = BeautifulSoup(response, 'lxml')
                     tags = soup.find_all('img')
                     for tag in tags:
@@ -138,9 +138,9 @@ def parse_excel_file():
             try:
                 try:
                     if 'http://' in res:
-                        response = SESSION.get(res).text
+                        response = session.get(res).text
                     else:
-                        response = SESSION.get('http://'+res).text
+                        response = session.get('http://'+res).text
                     soup = BeautifulSoup(response, 'lxml')
                     tags = soup.find_all('img')
                     if len(tags) < 1:
@@ -179,7 +179,7 @@ def download_file():
     for item in url_media:
         m = item.split('/')[-1]
         if '.png' or '.jpg' or '.gif' in m:
-            r = SESSION.get(item)
+            r = session.get(item)
             with open('Media/{}/{}'.format(fol,m), 'wb') as f:
                 f.write(r.content)
     print('\n' + C + '[>] ' + R + 'All Files Downloaded in Media/{}'.format(fol) +W)
