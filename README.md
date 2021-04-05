@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/OSINT-red.svg?style=plastic">
   <img src="https://img.shields.io/badge/Arc-Linux-red.svg">
   <img src="https://img.shields.io/badge/-Tor-green.svg">
-  <h4 align="center">OSINT Tool to find Media Links in Tor Sites</h4>
+  <h4 align="center">OSINT Tool to find the Media Links in Tor Sites</h4>
 </p>
 <p align="center">
   <br>
